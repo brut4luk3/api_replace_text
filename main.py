@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/api/replace_text', methods=['POST'])
 
-def compara_datas():
+def replace_text():
     dados = request.get_json()
     texto = dados['texto']
     item_para_substituir = dados['item_para_substituir']
