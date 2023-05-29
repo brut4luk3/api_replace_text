@@ -19,18 +19,21 @@ def replace_text():
         response = {
             'result': novo_texto
         }
+        return jsonify(response), 200
+
     elif modo == 'parcial':
         novo_texto = texto.replace(item_para_substituir, item_substituto, parcial)
 
         response = {
             'result': novo_texto
         }
+        return jsonify(response), 200
+
     else:
         response = {
             'Erro': 'Modo de operação inválido! Modos aceitos: completo ou parcial (caso parcial, insira a quantidade em CasoParcialQuantidade.'
         }
-
-    return jsonify(response)
+        return jsonify(response), 400
 
 if __name__ == '__main__':
     app.run()
